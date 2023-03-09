@@ -12,6 +12,8 @@ export class BannerComponent implements OnInit {
 @Input() contact;
 @Input() width;
 @Input() height;
+@Input() logoHeight;
+@Input() logoWidth;
 @Input() submitted;
 banner:any;
 editMoreBtn: boolean = false;

@@ -26,6 +26,8 @@ form:FormGroup;
         contact:['',Validators.required],
         height:['',Validators.required],
         width:['',Validators.required],
+        logoWidth:['',Validators.required],
+        logoHeight:['',Validators.required],
     })
   }
 

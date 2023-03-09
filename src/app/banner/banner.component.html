@@ -6,7 +6,7 @@
         <div class="title" cdkDragBoundary=".body" cdkDrag *ngIf="title">{{title}}</div>
         <div class="contact" cdkDragBoundary=".body" cdkDrag *ngIf="contact">{{contact}}</div>
         <div class="logo" cdkDragBoundary=".body" cdkDrag *ngIf="logo">
-            <img [src]="logo" height="40" width="40" alt="logo" />
+            <img [src]="logo" height="40" width="40" alt="logo" [ngStyle]="{'width' : logoWidth ? logoWidth+'px' : '40px','height': logoHeight ? logoHeight+'px' : '40px'}"/>
         </div>
     </div>
     <div class="bottomButtons" *ngIf="submitted" [ngStyle]="{'width' : width ? width+'px' : '500px'}">
