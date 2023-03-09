@@ -11,7 +11,10 @@
     </div>
     <div class="bottomButtons" *ngIf="submitted">
         
-        <button type="button" class="submitbtn download" (click)="capturar()">
+        <button type="button" class="submitbtn download" (click)="capturar()" *ngIf="!modified">
+                Finalize
+    </button>
+        <button type="button" class="submitbtn download" *ngIf="modified">
             <a [href]="banner" target="_self" download style="text-decoration: none;color:white;">
                 Download Banner
             </a>

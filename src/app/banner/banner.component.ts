@@ -13,6 +13,7 @@ export class BannerComponent implements OnInit {
 @Input() submitted;
 banner:any;
 editMoreBtn: boolean = false;
+modified: boolean = false;
   constructor() {}
 
   ngOnInit(): void {
@@ -27,6 +28,7 @@ editMoreBtn: boolean = false;
 
   // Function to create the snapshot of the banner in html tags (by Pankaj Phour) on March 06 2023
   capturar(){
+    this.modified = true;
     // Getting our banner parent element by it's id 
     var node = document.getElementById('capture');
     var options = {quality: 1};
