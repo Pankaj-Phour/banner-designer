@@ -10,6 +10,8 @@ export class BannerComponent implements OnInit {
 @Input() logo;
 @Input() title;
 @Input() contact;
+@Input() width;
+@Input() height;
 @Input() submitted;
 banner:any;
 editMoreBtn: boolean = false;

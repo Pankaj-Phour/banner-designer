@@ -1,6 +1,6 @@
 <!-- <div class="parent" > -->
-    <div class="body" id="capture">
-        <img [src]="image" class="background" height="100%" width="100%" alt="Background image" *ngIf="image">
+    <div class="body" id="capture" [ngStyle]="{'width' : width ? width+'px' : '500px','height': height ? height+'px' : '400px'}">
+        <img [src]="image" class="background" height="100%" width="100%" alt="Background image" *ngIf="image"[ngStyle]="{'width' : width ? width+'px' : '500px','height': height ? height+'px' : '400px'}">
         <!-- added cdkDrag directive -->
         <!-- for this I have updated angular CLI to latest version 15 -->
         <div class="title" cdkDragBoundary=".body" cdkDrag *ngIf="title">{{title}}</div>
@@ -9,7 +9,7 @@
             <img [src]="logo" height="40" width="40" alt="logo" />
         </div>
     </div>
-    <div class="bottomButtons" *ngIf="submitted">
+    <div class="bottomButtons" *ngIf="submitted" [ngStyle]="{'width' : width ? width+'px' : '500px'}">
         
         <button type="button" class="submitbtn download" (click)="capturar()" *ngIf="!modified">
                 Finalize

@@ -47,10 +47,16 @@
             <div class="formGroup" *ngIf="!imageUpload && !logoUpload">
                 <textarea type="text" class="title" placeholder="Enter contact no. here" formControlName="contact"></textarea>
             </div>
+            <div class="formGroup" *ngIf="!imageUpload && !logoUpload">
+                <input type="number" class="title" placeholder="Enter Height of the banner" formControlName="height">
+            </div>
+            <div class="formGroup" *ngIf="!imageUpload && !logoUpload">
+                <input type="number" class="title" placeholder="Enter Width of the banner" formControlName="width">
+            </div>
             <button type="button" (click)="submit()" [disabled]="form.invalid" class="submitbtn" *ngIf="!imageUpload && !logoUpload">Submit</button>
         </form>
     </div>
     <div class="right" [ngStyle]="{'background-color': submitted ? 'transparent' : 'black'}">
-        <app-banner [image]="backGround" [logo]="logo" [title]="form.value.title" [contact]="form.value.contact" [submitted]="submitted"></app-banner>
+        <app-banner [image]="backGround" [logo]="logo" [title]="form.value.title" [contact]="form.value.contact" [submitted]="submitted" [width]="form.value.width" [height]="form.value.height"></app-banner>
     </div>
 </div>

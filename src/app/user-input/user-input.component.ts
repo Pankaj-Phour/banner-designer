@@ -24,6 +24,8 @@ form:FormGroup;
     this.form = this._fb.group({
         title:['',Validators.required],
         contact:['',Validators.required],
+        height:['',Validators.required],
+        width:['',Validators.required],
     })
   }
 
