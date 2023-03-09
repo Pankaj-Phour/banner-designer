@@ -23,6 +23,7 @@ form:FormGroup;
   validation(){
     this.form = this._fb.group({
         title:['',Validators.required],
+        contact:['',Validators.required],
     })
   }
 

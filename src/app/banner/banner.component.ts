@@ -9,6 +9,8 @@ export class BannerComponent implements OnInit {
 @Input() image;
 @Input() logo;
 @Input() title;
+@Input() contact;
+@Input() submitted;
 banner:any;
 editMoreBtn: boolean = false;
   constructor() {}
@@ -18,7 +20,7 @@ editMoreBtn: boolean = false;
     // console.log(this.logo);
     // console.log(this.title);
     setTimeout(() => {
-      this.capturar()
+      // this.capturar()
     }, 500);
   }
 

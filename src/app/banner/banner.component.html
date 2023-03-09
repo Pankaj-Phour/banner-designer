@@ -1,18 +1,23 @@
-<div class="body" id="capture">
-    <img [src]="image" class="background" height="100%" width="100%" alt="Background image">
-    <!-- added cdkDrag directive -->
-    <!-- for this I have updated angular CLI to latest version 15 -->
-    <div class="title" cdkDragBoundary=".body" cdkDrag>{{title}}</div>
-    <div class="logo" cdkDragBoundary=".body" cdkDrag>
-        <img [src]="logo" height="40" width="40" alt="logo" />
+<!-- <div class="parent" > -->
+    <div class="body" id="capture">
+        <img [src]="image" class="background" height="100%" width="100%" alt="Background image" *ngIf="image">
+        <!-- added cdkDrag directive -->
+        <!-- for this I have updated angular CLI to latest version 15 -->
+        <div class="title" cdkDragBoundary=".body" cdkDrag *ngIf="title">{{title}}</div>
+        <div class="contact" cdkDragBoundary=".body" cdkDrag *ngIf="contact">{{contact}}</div>
+        <div class="logo" cdkDragBoundary=".body" cdkDrag *ngIf="logo">
+            <img [src]="logo" height="40" width="40" alt="logo" />
+        </div>
     </div>
-</div>
-
-<button type="button" class="submitbtn download">
-<a [href]="banner" target="_self" download style="text-decoration: none;color:white;">
-    Download Banner
-</a>
-</button>
-<button type="submit" class="submitbtn more" (click)="editMore()">
+    <div class="bottomButtons" *ngIf="submitted">
+        
+        <button type="button" class="submitbtn download" (click)="capturar()">
+            <a [href]="banner" target="_self" download style="text-decoration: none;color:white;">
+                Download Banner
+            </a>
+    </button>
+    <button type="submit" class="submitbtn more" (click)="editMore()">
         Edit More
-</button>
+    </button>
+</div>
+<!-- </div> -->
