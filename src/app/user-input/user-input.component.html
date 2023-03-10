@@ -33,36 +33,36 @@
 <div class="container">
     <div class="left" *ngIf="!submitted">
         <form [formGroup]="form">
-            <div class="formGroup" *ngIf="imageUpload">
+            <div class="formGroup">
                 <input type="file" #handleInput (change)="handleChange($event)" class="input" accept="image/*">
-                <button (click)="handleInput.click()"class="submitbtn" type="button">Choose Background image</button>
+                <button (click)="handleInput.click()"class="submitbtn" type="button">Choose Background</button>
             </div>
-            <div class="formGroup" *ngIf="logoUpload">
+            <div class="formGroup">
                 <input type="file" #logo (change)="handleLogo($event)" class="input" accept="image/*">
                 <button type="button" (click)="logo.click()" class="submitbtn">Choose Logo</button>
             </div>
-            <div class="formGroup" *ngIf="!imageUpload && !logoUpload">
-                <textarea type="text" class="title" placeholder="Enter title of banner here" formControlName="title"></textarea>
+            <div class="formGroup">
+                <input type="text" class="title" placeholder="Enter title of banner here" formControlName="title">
             </div>
-            <div class="formGroup" *ngIf="!imageUpload && !logoUpload">
-                <textarea type="text" class="title" placeholder="Enter contact no. here" formControlName="contact"></textarea>
+            <div class="formGroup">
+                <input type="number" class="title" placeholder="Enter contact no. here" formControlName="contact">
             </div>
-            <div class="formGroup" *ngIf="!imageUpload && !logoUpload">
+            <div class="formGroup">
                 <input type="number" class="title" placeholder="Enter Height of the banner" formControlName="height">
             </div>
-            <div class="formGroup" *ngIf="!imageUpload && !logoUpload">
+            <div class="formGroup" >
                 <input type="number" class="title" placeholder="Enter Width of the banner" formControlName="width">
             </div>
-            <div class="formGroup" *ngIf="!imageUpload && !logoUpload">
+            <div class="formGroup" >
                 <input type="number" class="title" placeholder="Enter Height of the logo" formControlName="logoHeight">
             </div>
-            <div class="formGroup" *ngIf="!imageUpload && !logoUpload">
+            <div class="formGroup">
                 <input type="number" class="title" placeholder="Enter Width of the logo" formControlName="logoWidth">
             </div>
-            <button type="button" (click)="submit()" [disabled]="form.invalid" class="submitbtn" *ngIf="!imageUpload && !logoUpload">Submit</button>
+            <button type="button" (click)="submit()" [disabled]="form.invalid" class="submitbtn" >Submit</button>
         </form>
     </div>
-    <div class="right" [ngStyle]="{'background-color': submitted ? 'transparent' : 'black'}">
+    <div class="right" [ngStyle]="{'background-color': submitted ? 'transparent' : 'black','height':form.value.height ? form.value.height+'px' : '500px','width':form.value.width ? form.value.width+'px' : '550px'}">
         <app-banner [image]="backGround" [logo]="logo" [title]="form.value.title" [contact]="form.value.contact" [submitted]="submitted"
          [width]="form.value.width" [height]="form.value.height" [logoWidth]="form.value.logoWidth" [logoHeight]="form.value.logoHeight"></app-banner>
     </div>

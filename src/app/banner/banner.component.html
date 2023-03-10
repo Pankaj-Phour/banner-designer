@@ -1,10 +1,10 @@
 <!-- <div class="parent" > -->
-    <div class="body" id="capture" [ngStyle]="{'width' : width ? width+'px' : '500px','height': height ? height+'px' : '400px'}">
-        <img [src]="image" class="background" height="100%" width="100%" alt="Background image" *ngIf="image"[ngStyle]="{'width' : width ? width+'px' : '500px','height': height ? height+'px' : '400px'}">
+    <div class="body" id="capture" [ngStyle]="{'width' : width ? width+'px' : '550px','height': height ? height+'px' : '500px'}">
+        <img [src]="image" class="background" height="100%" width="100%" alt="Background image" *ngIf="image"[ngStyle]="{'width' : width ? width+'px' : '550px','height': height ? height+'px' : '500px'}">
         <!-- added cdkDrag directive -->
         <!-- for this I have updated angular CLI to latest version 15 -->
-        <div class="title" cdkDragBoundary=".body" cdkDrag *ngIf="title">{{title}}</div>
-        <div class="contact" cdkDragBoundary=".body" cdkDrag *ngIf="contact">{{contact}}</div>
+        <div class="title" cdkDragBoundary=".body" cdkDrag *ngIf="title" contenteditable="true">{{title}}</div>
+        <div class="contact" cdkDragBoundary=".body" cdkDrag *ngIf="contact" contenteditable="true">{{contact}}</div>
         <div class="logo" cdkDragBoundary=".body" cdkDrag *ngIf="logo">
             <img [src]="logo" height="40" width="40" alt="logo" [ngStyle]="{'width' : logoWidth ? logoWidth+'px' : '40px','height': logoHeight ? logoHeight+'px' : '40px'}"/>
         </div>

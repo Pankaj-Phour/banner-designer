@@ -39,7 +39,7 @@ modified: boolean = false;
 
     // converting the banner of html tags to image 
     domtoimage.toJpeg(node, options).then((dataUrl) => {
-      console.log(dataUrl) //Image in base64 jpeg
+      // console.log(dataUrl) //Image in base64 jpeg
       this.banner = dataUrl
     });
 }
