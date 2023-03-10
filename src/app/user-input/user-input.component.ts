@@ -23,11 +23,16 @@ form:FormGroup;
   validation(){
     this.form = this._fb.group({
         title:['',Validators.required],
+        contact:['',Validators.required],
+        height:['',Validators.required],
+        width:['',Validators.required],
+        logoWidth:['',Validators.required],
+        logoHeight:['',Validators.required],
     })
   }
 
 handleChange(e:any){
-  console.log(e);
+  // console.log(e);
   const reader = new FileReader();
   reader.onload = (event:any)=>{
     console.log(event);
@@ -39,7 +44,7 @@ handleChange(e:any){
 }
 
 handleLogo(e:any){
-  console.log(e);
+  // console.log(e);
   const reader = new FileReader();
   reader.onload = (event:any)=>{
     this.logo = event.target.result;
@@ -50,8 +55,8 @@ handleLogo(e:any){
 }
 
 submit(){
-  console.log("Submitting...");
-  console.log(this.backGround,this.logo,this.form.value);
+  // console.log("Submitting...");
+  // console.log(this.backGround,this.logo,this.form.value);+
   this.submitted = true;
 }
 
