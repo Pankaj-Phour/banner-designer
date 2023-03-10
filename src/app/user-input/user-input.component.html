@@ -45,7 +45,13 @@
                 <input type="text" class="title" placeholder="Enter title of banner here" formControlName="title">
             </div>
             <div class="formGroup">
+                <input type="number" class="title" placeholder="Font Size of the title" formControlName="fontSize">
+            </div>
+            <div class="formGroup">
                 <input type="number" class="title" placeholder="Enter contact no. here" formControlName="contact">
+            </div>
+            <div class="formGroup">
+                <input type="number" class="title" placeholder="Font Size of the contact" formControlName="contactSize">
             </div>
             <div class="formGroup">
                 <input type="number" class="title" placeholder="Enter Height of the banner" formControlName="height">
@@ -64,6 +70,7 @@
     </div>
     <div class="right" [ngStyle]="{'background-color': submitted ? 'transparent' : 'black','height':form.value.height ? form.value.height+'px' : '500px','width':form.value.width ? form.value.width+'px' : '550px'}">
         <app-banner [image]="backGround" [logo]="logo" [title]="form.value.title" [contact]="form.value.contact" [submitted]="submitted"
-         [width]="form.value.width" [height]="form.value.height" [logoWidth]="form.value.logoWidth" [logoHeight]="form.value.logoHeight"></app-banner>
+         [width]="form.value.width" [height]="form.value.height" [logoWidth]="form.value.logoWidth" [logoHeight]="form.value.logoHeight"
+         [titleSize]="form.value.fontSize" [contactSize]="form.value.contactSize" (edit)="edit($event)"></app-banner>
     </div>
 </div>
