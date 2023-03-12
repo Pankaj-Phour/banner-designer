@@ -23,7 +23,9 @@ form:FormGroup;
   validation(){
     this.form = this._fb.group({
         title:['',Validators.required],
+        fontSize:['',Validators.required],
         contact:['',Validators.required],
+        contactSize:['',Validators.required],
         height:['',Validators.required],
         width:['',Validators.required],
         logoWidth:['',Validators.required],
@@ -58,6 +60,11 @@ submit(){
   // console.log("Submitting...");
   // console.log(this.backGround,this.logo,this.form.value);+
   this.submitted = true;
+}
+
+edit(e:any){
+  console.log(e);
+  this.submitted = e;
 }
 
 }

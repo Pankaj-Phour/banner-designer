@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import domtoimage from 'dom-to-image';
 @Component({
   selector: 'app-banner',
@@ -14,7 +14,10 @@ export class BannerComponent implements OnInit {
 @Input() height;
 @Input() logoHeight;
 @Input() logoWidth;
+@Input() titleSize;
+@Input() contactSize;
 @Input() submitted;
+@Output() edit = new EventEmitter();
 banner:any;
 editMoreBtn: boolean = false;
 modified: boolean = false;
@@ -45,7 +48,16 @@ modified: boolean = false;
 }
 
 editMore(){
-  window.location.reload();
+  this.edit.emit(false)
+  // window.location.reload();
+  this.submitted = false;
+
+}
+
+download(){
+  setTimeout(() => {
+    window.location.reload();
+  }, 1500);
 }
 
 
